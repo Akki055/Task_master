@@ -20,9 +20,9 @@ jobs:
 
     - name: Push Docker Image
       run: |
-          docker pull akki058/devtaskmaster:latest
-          docker tag akki058/devtaskmaster:latest akki058/prodtaskmaster:latest
-          docker push akki058/prodtaskmaster:latest
+          docker build akki058/devtaskmaster:latest .
+          docker push akki058/devtaskmaster:latest
+
     - name: Kubectl Action
       uses: tale/kubectl-action@v1
       with:
